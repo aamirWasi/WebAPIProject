@@ -15,7 +15,7 @@ namespace LibraryApi.Services
         public Student GetStudent(int? studnetId)
         {
 
-            var student = _studentRepository.GetSingleStudent(studnetId);
+            var student = _studentRepository.GetStudentById(studnetId);
             return student;
         }
 
@@ -36,7 +36,7 @@ namespace LibraryApi.Services
 
         public List<Student> GetStudentList()
         {
-            var studentList = _studentRepository.GetStudents();
+            var studentList = _studentRepository.GetAllStudents();
             return studentList;
         }
 

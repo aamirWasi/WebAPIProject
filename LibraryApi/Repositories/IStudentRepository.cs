@@ -5,9 +5,9 @@ namespace LibraryApi.Repositories
 {
     public interface IStudentRepository
     {
-        Student GetSingleStudent(int? studentId);
+        Student GetStudentById(int? studentId);
         void Insert(Student student);
-        List<Student> GetStudents();
+        List<Student> GetAllStudents();
         void UpdateStudent(Student student);
         void DeleteStudent(Student student);
         decimal CheckFine(int? studentId);

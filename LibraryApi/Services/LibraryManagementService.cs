@@ -87,7 +87,7 @@ namespace LibraryApi.Services
 
         public Student GetStudent(int? studentId)
         {
-            return _studentRepository.GetSingleStudent(studentId);
+            return _studentRepository.GetStudentById(studentId);
         }
 
 

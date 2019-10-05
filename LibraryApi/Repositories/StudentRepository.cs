@@ -14,7 +14,7 @@ namespace LibraryApi.Repositories
             _context = context;
         }
 
-        public Student GetSingleStudent(int? studentId)
+        public Student GetStudentById(int? studentId)
         {
             return _context.Students.Where(s => s.Id == studentId).FirstOrDefault();
         }
@@ -22,10 +22,15 @@ namespace LibraryApi.Repositories
         public void Insert(Student student)
         {
             _context.Students.Add(student);
+            Save();
+        }
+
+        private void Save()
+        {
             _context.SaveChanges();
         }
 
-        public List<Student> GetStudents()
+        public List<Student> GetAllStudents()
         {
             var students = _context.Students.OrderBy(s => s.Id).ToList();
             return students;
