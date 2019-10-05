@@ -12,19 +12,24 @@ namespace LibraryApi.Repositories
         public void IncreaseBook(Book book)
         {
             _context.Books.Update(book);
-            _context.SaveChanges();
+            Save();
         }
 
         public void InsertReturnBook(ReturnBook returnBook)
         {
             _context.ReturnBooks.Add(returnBook);
+            Save();
+        }
+
+        private void Save()
+        {
             _context.SaveChanges();
         }
 
         public void UpdateFine(Student student)
         {
             _context.Students.Update(student);
-            _context.SaveChanges();
+            Save();
         }
     }
 }

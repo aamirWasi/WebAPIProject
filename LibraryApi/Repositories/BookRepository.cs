@@ -29,6 +29,11 @@ namespace LibraryApi.Repositories
         public void Insert(Book book)
         {
             _context.Books.Add(book);
+            Save();
+        }
+
+        private void Save()
+        {
             _context.SaveChanges();
         }
 

@@ -21,13 +21,18 @@ namespace LibraryApi.Repositories
         public void InsertBookIssue(BookIssue bookIssue)
         {
             _context.BookIssues.Add(bookIssue);
-            _context.SaveChanges();
+            Save();
 
         }
 
         public void DecreaseBook(Book book)
         {
             _context.Books.Update(book);
+            Save();
+        }
+
+        private void Save()
+        {
             _context.SaveChanges();
         }
 

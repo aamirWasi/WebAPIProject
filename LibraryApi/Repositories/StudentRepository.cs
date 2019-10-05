@@ -27,7 +27,7 @@ namespace LibraryApi.Repositories
 
         private void Save()
         {
-            _context.SaveChanges();
+            Save();
         }
 
         public List<Student> GetAllStudents()
@@ -39,13 +39,13 @@ namespace LibraryApi.Repositories
         public void UpdateStudent(Student student)
         {
             _context.Students.Update(student);
-            _context.SaveChanges();
+            Save();
         }
 
         public void DeleteStudent(Student student)
         {
             _context.Students.Remove(student);
-            _context.SaveChanges();
+            Save();
         }
 
         public decimal CheckFine(int? studentId)
@@ -60,7 +60,7 @@ namespace LibraryApi.Repositories
         {
             student.FineAmount = paymentAmount;
             _context.Students.Update(student);
-            _context.SaveChanges();
+            Save();
         }
     }
 }
