@@ -16,7 +16,7 @@ namespace LibraryApi.Repositories
 
         public Student GetSingleStudent(int? studentId)
         {
-            return _context.Students.Where(s => s.StudentID == studentId).FirstOrDefault();
+            return _context.Students.Where(s => s.Id == studentId).FirstOrDefault();
         }
 
         public void Insert(Student student)
@@ -27,7 +27,7 @@ namespace LibraryApi.Repositories
 
         public List<Student> GetStudents()
         {
-            var students = _context.Students.OrderBy(s => s.StudentID).ToList();
+            var students = _context.Students.OrderBy(s => s.Id).ToList();
             return students;
         }
 
@@ -46,7 +46,7 @@ namespace LibraryApi.Repositories
         public decimal CheckFine(int? studentId)
         {
             return _context.Students
-                    .Where(s => s.StudentID == studentId)
+                    .Where(s => s.Id == studentId)
                     .Select(s => s.FineAmount)
                     .FirstOrDefault();
         }

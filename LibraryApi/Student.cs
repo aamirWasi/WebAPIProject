@@ -4,8 +4,8 @@ namespace LibraryApi
 {
     public class Student
     {
-        public int StudentID { get; set; }
-        public string StudentName { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
         public decimal FineAmount { get; set; }
     }
 }

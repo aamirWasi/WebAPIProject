@@ -18,12 +18,12 @@ namespace LibraryApi.Repositories
 
         public List<Book> GetAllBooks()
         {
-            return _context.Books.OrderBy(b => b.BookId).ToList();
+            return _context.Books.OrderBy(b => b.Id).ToList();
         }
 
         public Book GetSingleBook(int? bookId)
         {
-            return _context.Books.Where(b => b.BookId == bookId).FirstOrDefault();
+            return _context.Books.Where(b => b.Id == bookId).FirstOrDefault();
         }
 
         public void Insert(Book book)
